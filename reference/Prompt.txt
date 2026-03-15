@@ -1,0 +1,4 @@
+I am creating a Farmer's Input database where I need to store input what is required by farmer to grow a crop.
+Create an Input Database tables to store and perform below,
+Create Table script with Input table
+Generate 50 random input master data and create insert sript to store in Input table.
