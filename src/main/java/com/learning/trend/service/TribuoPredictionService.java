@@ -35,11 +35,9 @@ public class TribuoPredictionService {
     }
 
     public String predict(FarmerInputFeatures features) {
-        LOG.info("Building example for prediction with features: {}", features.toString());
         Example<Label> example = buildExample(features);
 
         Prediction<Label> prediction = model.predict(example);
-        LOG.info("Prediction result: {}", prediction);
 
         return prediction.getOutput().getLabel();
     }

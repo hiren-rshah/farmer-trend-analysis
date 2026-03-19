@@ -22,7 +22,7 @@ public class ChatController {
     public String chat(@RequestBody String userInput)
     {
         LOG.info("Received user input: {}", userInput);
-        return chatService.process(userInput);
+        return chatService.processUsingLLM(userInput);
     }
 
     @PostMapping (path = "/api", consumes = "application/json")
@@ -31,4 +31,5 @@ public class ChatController {
         LOG.info("Received API input: {}", farmerInputDTO.toString());
         return chatService.process(farmerInputDTO);
     }
+
 }

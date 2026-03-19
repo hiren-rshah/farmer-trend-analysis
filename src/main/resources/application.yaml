@@ -17,9 +17,32 @@ spring:
       settings.trace: false
       settings.web-allow-others: false
   ai:
+    retry:
+      max-attempts: 1
+      backoff:
+        delay: 2000 # milliseconds
+        max-delay: 10000 # milliseconds
+        multiplier: 2.0 # exponential backoff multiplier
     openai:
-      api-key: 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
-  #    api-key: ${OPENAI_API_KEY:your-api-key-here}
+      api-key: ${OPENAI_API_KEY:your-api-key-here}
       chat:
         options:
           model: gpt-4o-mini
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: llama3.2:1b
+    model:
+      chat: openai # openai or ollama
+
+
+logging:
+#  pattern:
+#    console: %green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n
+  level:
+    org:
+      springframework:
+        ai: INFO
+        web:
+          client: INFO

@@ -25,7 +25,7 @@ public class FarmerInputPredictor {
         Example<Label> example = new ArrayExample<>(new Label("previous_input_usage"));
 
         // Numeric features
-        example.add(new Feature("year", 2023));
+        example.add(new Feature("year", 2023.0));
         example.add(new Feature("month", 7));
         example.add(new Feature("rainfall_mm", 100));
         example.add(new Feature("farmer_land_size_acres", 1.5));
